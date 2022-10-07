@@ -39,4 +39,10 @@ class FizzBuzzTest extends TestCase
         $this->assertEquals('Buzz', $this->fizzBuzz->say(5));
         $this->assertEquals('Buzz', $this->fizzBuzz->say(10));
     }
+
+    public function testShouldSayFizzBuzzWhenFifteenIsAsked()
+    {
+        $this->assertEquals('FizzBuzz', $this->fizzBuzz->say(15));
+        $this->assertEquals('FizzBuzz', $this->fizzBuzz->say(45));
+    }
 }
