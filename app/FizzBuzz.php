@@ -3,18 +3,22 @@ namespace App;
 
 class FizzBuzz
 {
+    private array $rules;
+
+    public function __construct()
+    {
+        $this->rules = [
+            15 => 'FizzBuzz',
+            5 => 'Buzz',
+            3 => 'Fizz',
+        ];
+    }
     public function say(int $number): string
     {
-        if ($number % 15 === 0) {
-            return 'FizzBuzz';
-        }
-
-        if ($number % 5 === 0) {
-            return 'Buzz';
-        }
-
-        if ($number % 3 === 0) {
-            return 'Fizz';
+        foreach ($this->rules as $key => $word) {
+            if ($number % $key === 0) {
+                return $word;
+            }
         }
 
         return (string) $number;
