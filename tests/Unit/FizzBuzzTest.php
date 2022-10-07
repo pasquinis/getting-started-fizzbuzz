@@ -6,9 +6,25 @@ use PHPUnit\Framework\TestCase;
 
 class FizzBuzzTest extends TestCase
 {
+    private FizzBuzz $fizzBuzz;
+
+    protected function setUp(): void
+    {
+        $this->fizzBuzz = new FizzBuzz();
+    }
+
     public function testAbleToCreateObject()
     {
-        $fizzBuzz = new FizzBuzz();
-        $this->assertInstanceOf(FizzBuzz::class, $fizzBuzz);
+        $this->assertInstanceOf(FizzBuzz::class, $this->fizzBuzz);
+    }
+
+    public function testShouldSayOneWhenOneIsAsked()
+    {
+        $this->assertEquals('1', $this->fizzBuzz->say(1));
+    }
+
+    public function testShouldSayTwoWhenTwoIsAsked()
+    {
+        $this->assertEquals('2', $this->fizzBuzz->say(2));
     }
 }
