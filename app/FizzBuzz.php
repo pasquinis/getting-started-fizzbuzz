@@ -5,6 +5,10 @@ class FizzBuzz
 {
     public function say(int $number): string
     {
+        if ($number % 5 === 0) {
+            return 'Buzz';
+        }
+
         if ($number % 3 === 0) {
             return 'Fizz';
         }
